@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lista de Tareas</title>
+</head>
+
+<body>
+    <link rel="stylesheet" href="ej3 Tareas.css">
+    <h1>Lista de Tareas</h1>
+    <input type="text" id="texto" placeholder="Agregar nueva tarea">
+    <button onclick="agregarTarea()">Agregar</button>
+    <ul id="lista"></ul>
+
+    <script>
+        function agregarTarea() {
+            const tareaInput = document.getElementById('texto');
+            const tareaTexto = tareaInput.value.trim();
+            if (tareaTexto) {
+                const li = document.createElement('li');
+                li.textContent = tareaTexto;
+                li.onclick = function () {
+                    li.classList.toggle('completada');
+                };
+                document.getElementById('lista').appendChild(li);
+                tareaInput.value = '';
+            } else {
+                alert('Por favor, ingresa una tarea.');
+            }
+        }
+    </script>
+
+</body>
+
+</html>

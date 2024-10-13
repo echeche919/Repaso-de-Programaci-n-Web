@@ -1,0 +1,7 @@
+body {
+    text-align: center;
+}
+
+.transform-box:hover {
+    transform: scale(2);
+}

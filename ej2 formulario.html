@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejercicio 2</title>
+</head>
+
+<body>
+    <link rel="stylesheet" href="ej2 formulario.css">
+    <script>
+        function validateForm() {
+            let name = document.forms["myForm"]["username"].value;
+            let surname = document.forms["myForm"]["usersurname"].value;
+            let genero = document.forms["myForm"]["gender"].value;
+            let mail = document.forms["myForm"]["user_mail"].value;
+            if (name == "") {
+                alert("Name must be filled out");
+                return false;
+            } else if (surname == "") {
+                alert("Surname must be filled out");
+                return false;
+            } else if (genero == "") {
+                alert("Gender must be filled out");
+                return false;
+            } else if (mail == "") {
+                alert("Mail must be filled out");
+                return false;
+            }
+        }
+    </script>
+    <h1>Formulario</h1>
+    <div>
+        <form method="post" action="ej2confirmacion.html" name="myForm" onsubmit="return validateForm()">
+            <ul>
+                <li>
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="username" />
+                </li>
+                <li>
+                    <label for="surname">Apellido:</label>
+                    <input type="text" id="surname" name="usersurname" />
+                </li>
+                <li>
+                    <p>Su genero es:</p>
+                    <input type="radio" id="hombre" name="gender" value="hombre">
+                    <label for="hombre">hombre</label><br>
+                    <input type="radio" id="mujer" name="gender" value="mujer">
+                    <label for="mujer">mujer</label><br>
+                    <input type="radio" id="no decir" name="gender" value="prefiero no decir">
+                    <label for="prefiero no decir">prefiero no decir</label>
+                </li>
+                <br>
+                <li>
+                    <label for="mail">Correo electrónico:</label>
+                    <input type="email" id="mail" name="user_mail" />
+                </li>
+                <li>
+                    <p>Que tanto le gusto esta pagina?</p>
+                    <div class="slidecontainer">
+                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    </div>
+                </li>
+                <input type="submit" id="submit" name="submit" />
+            </ul>
+        </form>
+    </div>
+</body>
+
+</html>
